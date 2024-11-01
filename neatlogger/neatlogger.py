@@ -3,10 +3,10 @@ from loguru import logger as log
 from functools import partialmethod
 
 # Invent new levels
-log.level("PROGRESS", no=21, icon="|", color="<white>")
-log.level("READ", no=22, icon=">", color="<yellow>")
-log.level("WRITE", no=23, icon="<", color="<green>")
-log.level("NEW", no=24, icon="*", color="<white>")
+log.level("PROGRESS", no=21, icon=" |", color="<white>")
+log.level("READ", no=22, icon=" >", color="<yellow>")
+log.level("WRITE", no=23, icon=" <", color="<green>")
+log.level("NEW", no=24, icon=" *", color="<white>")
 log.level("DONE", no=26, icon="--", color="<white>")
 
 # Allow to call the new levels by attribute
@@ -42,7 +42,7 @@ def formatter(record):
     elif record["level"].name == "SUCCESS":
         return "<level>{level.icon} {message}</>\n"
     elif record["level"].name == "DONE":
-        return "<level>{level.icon} Done. {message}</>\n"
+        return "<level>{level.icon} {message}</>\n"
     else:
         return (
             "<green>{time}</green> | <level>{level: <8}</level> | "

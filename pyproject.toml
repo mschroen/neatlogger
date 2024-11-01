@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "Neatlogger"
-version = "0.1.0"
+version = "0.1.1"
 description = "Neat adaptions to the loguru package which wraps logging in python."
 authors = ["Martin Schrön <martin@schroen.eu>"]
 license = "MIT"
