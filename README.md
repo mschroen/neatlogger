@@ -1,5 +1,7 @@
 # Neatlogger
-
+[![PyPi Version](https://img.shields.io/pypi/v/neatlogger.svg)](https://pypi.python.org/pypi/neatlogger/)
+[![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/mschroen/neatlogger/blob/main/LICENSE)
+[![Issues](https://img.shields.io/github/issues-raw/mschroen/neatlogger.svg?maxAge=25000)](https://github.com/mschroen/neatlogger/issues)  
 Neat adaptions to the loguru package which wraps logging in python.
 
 ## Idea
