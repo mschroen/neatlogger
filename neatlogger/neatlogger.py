@@ -7,7 +7,7 @@ log.level("PROGRESS", no=21, icon=" |", color="<white>")
 log.level("READ", no=22, icon=" >", color="<yellow>")
 log.level("WRITE", no=23, icon=" <", color="<green>")
 log.level("NEW", no=24, icon=" *", color="<white>")
-log.level("DONE", no=26, icon="--", color="<white>")
+log.level("DONE", no=26, icon="==", color="<white>")
 
 # Allow to call the new levels by attribute
 log.__class__.progress = partialmethod(log.__class__.log, "PROGRESS")
@@ -51,6 +51,11 @@ def formatter(record):
         )
 
 
-# Apply new formatter
-log.remove()
-log.add(sys.stderr, format=formatter, level=0)
+def new_log(stream="out", level: int = 0, replace: bool = True):
+    if replace:
+        log.remove()
+    if stream == "out":
+        stream = sys.stdout
+    elif stream == "err":
+        stream = sys.stderr
+    log.add(stream, format=formatter, level=level)
